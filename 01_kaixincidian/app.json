@@ -5,7 +5,8 @@
     "pages/words/words",
     "pages/me/me",
     "pages/company/company",
-    "pages/mobile/mobile"
+    "pages/mobile/mobile",
+    "pages/login/login"
   ],
   "window":{
     "backgroundTextStyle":"light",

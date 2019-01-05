@@ -5,7 +5,47 @@ Page({
    * 页面的初始数据
    */
   data: {
+    disabled: true,
+    btnstate: 'default',
+    account: '',
+    password: '',
+    pwd:false
 
+  },
+
+  //账号失去焦点事件
+  accountInput: function(e){
+    var content = e.detail.value;//获取账号input的值
+    console.log('账号：' +content);
+    
+    if (content != ''){
+      this.setData({
+        disabled: false,
+        btnstate: 'primary',
+        account: content
+      })
+    } else {
+      this.setData({
+        disabled: true,
+        btnstate: 'default',
+      })
+    }
+    
+  },
+
+  //密码失去焦点事件
+  pwdBlur: function(e){
+    var pswd = e.detail.value;
+    if (pswd != ''){
+      this.setData({password : pswd});
+    }
+  },
+
+  //改变密码input的password属性
+  changePwd:function(e){
+    this.setData({
+      pwd:!this.setData.pwd
+    })
   },
 
   /**

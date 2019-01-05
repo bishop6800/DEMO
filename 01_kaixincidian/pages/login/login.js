@@ -1,4 +1,4 @@
-// pages/company/company.js
+// pages/login/login.js
 Page({
 
   /**
@@ -6,33 +6,6 @@ Page({
    */
   data: {
 
-  },
-
-  // 表单提交事件
-  formSubmit: function(e){
-    console.log(e);
-    var user = new Object();
-    user.account = e.detail.value.loginName;
-    user.password = e.detail.value.password;
-    user.company = e.detail.value.company;
-    user.userName = e.detail.value.userName;
-    user.code = e.detail.value.code;
-    user.mobile = e.detail.value.mobile;
-    user.switch = e.detail.value.switch;
-
-    wx: wx.setStorageSync("user", user);//将注册信息保存到缓存里
-
-    //显示消息提示框
-    wx.showToast({
-      title: '注册成功',
-      icon: 'success',
-      duration: 1000,
-      success: function(){
-        wx.navigateTo({
-          url: '../login/login', //跳转至注册成功页面
-        })
-      }
-    })
   },
 
   /**
